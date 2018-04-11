@@ -55,6 +55,7 @@ The [CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html) and [Ubuntu]({{
 *	[gd](http://php.net/manual/en/book.image.php){:target="&#95;blank"}, [ImageMagick 6.3.7](http://php.net/manual/en/book.imagick.php){:target="&#95;blank"} (or later) or both
 *	[intl](http://php.net/manual/en/book.intl.php){:target="&#95;blank"}
 *	[mbstring](http://php.net/manual/en/book.mbstring.php){:target="&#95;blank"}
+* [mcrypt](http://php.net/manual/en/book.mcrypt.php){:target="&#95;blank"}
 *	[hash](http://php.net/manual/en/book.hash.php){:target="&#95;blank"}
 *	[openssl](http://php.net/manual/en/book.openssl.php){:target="&#95;blank"}
 *	[PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="&#95;blank"}
