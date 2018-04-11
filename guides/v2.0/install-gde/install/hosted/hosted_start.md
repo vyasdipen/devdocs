@@ -23,7 +23,6 @@ If your hosted system is already set up, go to <a href="{{page.baseurl}}install-
 *	<a href="#newbie-verify">Verify the software on your system</a>
 <!-- *	<a href="#newbie-cpanel">Start the cPanel configuration utility</a> -->
 *	<a href="{{page.baseurl}}install-gde/install/hosted/hosted_start_db.html">Configure a database and a database user</a>
-*	<a href="{{page.baseurl}}install-gde/install/hosted/hosted_start_php.html">Configure PHP</a>
 *	<a href="{{page.baseurl}}install-gde/install/hosted/hosted_get-ftp.html">Transfer the Magento software to your hosted system</a>
 *	<a href="{{page.baseurl}}install-gde/install/hosted/hosted_install.html">Install the Magento software</a>
 
