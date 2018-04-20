@@ -17,7 +17,7 @@ functional_areas:
 
 [Redis](http://redis.io){:target="\_blank"} is an optional, backend cache solution that replaces the Zend Framework [Zend_Cache_Backend_File](http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html){:target="\_blank"}, which is used in Magento 2 by default.
 
-We support Redis versions 2.8 and 3.0. Redis 3.0 supports up to 64 different databases per instance of the service, while 2.8 allows for only a single database. See [Configure Redis]({{page.baseurl}}config-guide/redis/config-redis.html).
+We support Redis versions 2.8 and 3.0. Redis 3.0 supports up to 64 different databases per instance of the service, while 2.8 allows for only a single database. See [Configure Redis]({{page.baseurl}}/config-guide/redis/config-redis.html).
 
 ## Add Redis in configuration files {#settings}
 To enable Redis, add your installed version and allocated disk space in MB to `.magento/services.yaml` file:
@@ -45,10 +45,10 @@ relationships:
     redis: "myredis:redis"
 ```
 
-Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html).
+Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_services.html).
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
-We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
+We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 To verify this information used for configurations and settings:
 
@@ -72,20 +72,6 @@ To verify this information used for configurations and settings:
         ]
     }
     ```
-
-<!-- The following info is from Platform.sh and may not be required for Magento Cloud:
-You can then use the service in a configuration file of your application as follows:
-
-{% highlight php startinline=true %}
-if (getenv('MAGENTO_CLOUD_RELATIONSHIPS')) {
-    $relationships = json_decode(base64_decode(getenv('MAGENTO_CLOUD_RELATIONSHIPS')), true);
-
-    foreach ($relationships['redis'] as $endpoint) {
-        $container->setParameter('redis_host', $endpoint['host']);
-        $container->setParameter('redis_port', $endpoint['port']);
-    }
-}
-{% endhighlight %} -->
 
 ## Using the Redis CLI
 Assuming your Redis relationship is named `redis`, you can access it using the `redis-cli` tool.

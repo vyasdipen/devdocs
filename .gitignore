@@ -11,16 +11,17 @@ _site/
 ehthumbs.db
 Thumbs.db
 .idea
+.ruby-version
 
 # Config and output files #
 ###########################
 /_site/
 .jekyll-metadata
 CNAME
-_config.yml
 /Readme.md
 ignore
 /*.yml
+!_config.yml
 !_config.devdocs.yml
 /gen_public.bat
 /jk.bat

@@ -16,19 +16,25 @@ functional_areas:
 ---
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you must install both Apache and PHP, [install Apache]({{page.baseurl}}install-gde/prereq/apache.html) first.
+Magento, with assistance from our community, is implementing PHP 7.2 compatibility for our upcoming 2.3.0 release. Any backward-incompatibility issues will be resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases.
+
+If you are interested in participating in Magento Community projects we welcome your help! See our <a href="https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902" target="_blank">ZenHub board</a> for a full list of outstanding issues.
 </div>
 
 ## PHP versions supported {#php-support}
 {% include install/php_2.2.md %}
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If you must install both Apache and PHP, [install Apache]({{page.baseurl}}/install-gde/prereq/apache.html) first.
+</div>
+
 ## Help if you're just starting out {#php-ubuntu-help-beginner}
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	[Is the Magento software installed already?]({{page.baseurl}}install-gde/basics/basics_magento-installed.html)
-*	[What is the software that the Magento server needs to run?]({{page.baseurl}}install-gde/basics/basics_software.html)
-*	[What operating system is my server running?]({{page.baseurl}}install-gde/basics/basics_os-version.html)
-*	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl}}install-gde/basics/basics_login.html)
+*	[Is the Magento software installed already?]({{page.baseurl}}/install-gde/basics/basics_magento-installed.html)
+*	[What is the software that the Magento server needs to run?]({{page.baseurl}}/install-gde/basics/basics_software.html)
+*	[What operating system is my server running?]({{page.baseurl}}/install-gde/basics/basics_os-version.html)
+*	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl}}/install-gde/basics/basics_login.html)
 
 ## Verify PHP is installed {#ubuntu-verify-php}
 To verify if PHP is installed already, enter `php -v`. If PHP is installed, a message similar to the following displays:
@@ -42,7 +48,7 @@ To verify if PHP is installed already, enter `php -v`. If PHP is installed, a me
 The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}
 </div>
 
-If PHP is installed, continue with the next prerequisite, [MySQL]({{page.baseurl}}install-gde/prereq/mysql.html).
+If PHP is installed, continue with the next prerequisite, [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
 If PHP is *not* installed, see one of the following sections:
 
@@ -57,10 +63,11 @@ If PHP is *not* installed, see one of the following sections:
 		sudo apt-get -y update
 		sudo add-apt-repository ppa:ondrej/php
 		sudo apt-get -y update
-		sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv php7.0-soap
+
+		sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv php7.0-soap
 
     <div class="bs-callout bs-callout-info" id="info" markdown="1">
-    The last command installs all [required PHP extensions]({{page.baseurl}}install-gde/system-requirements-tech.html#required-php-extensions). The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.
+    The last command installs all [required PHP extensions]({{page.baseurl}}/install-gde/system-requirements-tech.html#required-php-extensions). The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.
     </div>
 
 2.	Verify that PHP 7.0 is installed properly:
@@ -77,7 +84,7 @@ If PHP is *not* installed, see one of the following sections:
     The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
     </div>
 
-3.	Verify that all [required PHP extensions]({{ page.baseurl }}install-gde/system-requirements-tech.html#required-php-extensions) were installed:
+3.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 
 		php -me
 
@@ -103,6 +110,7 @@ If PHP is *not* installed, see one of the following sections:
     json
     libxml
     mbstring
+    mcrypt
     mysqli
     mysqlnd
     openssl
@@ -133,7 +141,7 @@ If PHP is *not* installed, see one of the following sections:
     Zend OPcache
     </pre>
 
-4.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+4.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
@@ -145,10 +153,11 @@ If PHP is *not* installed, see one of the following sections:
 		sudo apt-get -y update
 		sudo add-apt-repository ppa:ondrej/php
 		sudo apt-get -y update
-		sudo apt-get install -y php7.1 libapache2-mod-php7.1 php7.1-common php7.1-gd php7.1-mysql php7.1-curl php7.1-intl php7.1-xsl php7.1-mbstring php7.1-zip php7.1-bcmath php7.1-iconv php7.1-soap
+
+		sudo apt-get install -y php7.1 libapache2-mod-php7.1 php7.1-common php7.1-gd php7.1-mysql php7.1-mcrypt php7.1-curl php7.1-intl php7.1-xsl php7.1-mbstring php7.1-zip php7.1-bcmath php7.1-iconv php7.1-soap
 
     <div class="bs-callout bs-callout-info" id="info" markdown="1">
-    The last command installs all [required PHP extensions]({{page.baseurl}}install-gde/system-requirements-tech.html#required-php-extensions). The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.
+    The last command installs all [required PHP extensions]({{page.baseurl}}/install-gde/system-requirements-tech.html#required-php-extensions). The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.
     </div>
 
 2.	Verify that PHP 7.1 is installed properly:
@@ -165,7 +174,7 @@ If PHP is *not* installed, see one of the following sections:
     The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
     </div>
 
-3.	Verify that all [required PHP extensions]({{ page.baseurl }}install-gde/system-requirements-tech.html#required-php-extensions) were installed:
+3.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 
 		php -me
 
@@ -191,6 +200,7 @@ If PHP is *not* installed, see one of the following sections:
     json
     libxml
     mbstring
+    mcrypt
     mysqli
     mysqlnd
     openssl
@@ -221,16 +231,16 @@ If PHP is *not* installed, see one of the following sections:
     Zend OPcache
     </pre>
 
-4.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+4.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
 #### Next
-[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
+[Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 
 #### Related topics
-*	[MySQL]({{page.baseurl}}install-gde/prereq/mysql.html)
-*	[Apache]({{page.baseurl}}install-gde/prereq/apache.html)
-*	[PHP 7.0&mdash;CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html)
-*	[Configuring security options]({{page.baseurl}}install-gde/prereq/security.html)
-*	[Installing optional software]({{page.baseurl}}install-gde/prereq/optional.html)
+*	[MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
+*	[Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
+*	[PHP&mdash;CentOS]({{page.baseurl}}/install-gde/prereq/php-centos.html)
+*	[Configuring security options]({{page.baseurl}}/install-gde/prereq/security.html)
+*	[Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)

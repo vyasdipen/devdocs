@@ -59,5 +59,5 @@ Determine if the mcrypt extension is loaded in any of the following ways:
 
 	`PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory in Unknown on line 0`
 
-In some cases, you might need to install the Magento software from the [command line]({{page.baseurl}}install-gde/install/cli/install-cli.html) and specify the full path to the LAMP stack that has mcrypt installed.
+In some cases, you might need to install the Magento software from the [command line]({{page.baseurl}}/install-gde/install/cli/install-cli.html) and specify the full path to the LAMP stack that has mcrypt installed.
 
