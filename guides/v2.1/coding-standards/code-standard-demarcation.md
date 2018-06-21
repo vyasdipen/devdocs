@@ -37,7 +37,7 @@ functional_areas:
    <p> ... </p>
    <p> ... </p>
 </section>
-<a href="#information-dialog-tree">Scroll to text</a></a>
+<a href="#information-dialog-tree">Scroll to text</a>
 ```
 
 **Unacceptable**
